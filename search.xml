@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/05/08/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>the first blog</title>
+    <url>/2024/05/11/the-first-blog/</url>
+    <content><![CDATA[<h5 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h5><p><code>Promise</code>对象的构造函数语法如下：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">   <span class="comment">// executor(&quot;生产者&quot;代码) </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+
+<p>当一个<code>Promise</code>对象被创建时，<code>executor</code>会自动运行</p>
+<p><code>resolve</code>与<code>reject</code>是js自身提供的回调，当<code>excutor</code>获得结果之后，应当调用二者之一：</p>
+<ul>
+<li><p><code>resolve(value)</code>	任务成功，并返回<code>value</code></p>
+</li>
+<li><p><code>reject(error)</code>	  出现<code>error</code></p>
+</li>
+</ul>
+<p>由<code>new Promise</code>返回的<code>Promise</code>对象具有以下内部属性：</p>
+<ul>
+<li><p><code>state</code>	表示当前<code>Promise</code>对象的状态。最初是<code>pending</code>，当<code>resolve</code>调用后变为<code>fulfilled</code>，若<code>reject</code>被调用，则变为<code>reject</code>，两者都被称为<code>settled</code>(稳定的)</p>
+</li>
+<li><p><code>result</code>      最开始是<code>undefined</code>，当<code>resolve(value)</code>调用后变为<code>value</code>，若<code>reject(error)</code>被调用，则变为<code>error</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/image-20231011211117291.png"
+                      alt="image-20231011211117291"
+                ></p>
+</li>
+</ul>
+<h6 id="then-catch"><a href="#then-catch" class="headerlink" title="then, catch"></a>then, catch</h6>  <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">promise.<span class="title function_">then</span>(</span><br><span class="line">  <span class="keyword">function</span>(<span class="params">result</span>) &#123; <span class="comment">/* handle a successful result */</span> &#125;,</span><br><span class="line">  <span class="keyword">function</span>(<span class="params">error</span>) &#123; <span class="comment">/* handle an error */</span> &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<p>  <code>.then</code>第一个函数在promise resolved接受到结果后执行</p>
+<p>  <code>.then</code>第二个函数在promise rejected接收到error后执行</p>
+<p>  eg:</p>
+  <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(<span class="string">&quot;done!&quot;</span>), <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// resolve 运行 .then 中的第一个函数</span></span><br><span class="line">promise.<span class="title function_">then</span>(</span><br><span class="line">  <span class="function"><span class="params">result</span> =&gt;</span> <span class="title function_">alert</span>(result), <span class="comment">// 1 秒后显示 &quot;done!&quot;</span></span><br><span class="line">  <span class="function"><span class="params">error</span> =&gt;</span> <span class="title function_">alert</span>(error) <span class="comment">// 不运行</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+  <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Whoops!&quot;</span>)), <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// reject 运行 .then 中的第二个函数</span></span><br><span class="line">promise.<span class="title function_">then</span>(</span><br><span class="line">  <span class="function"><span class="params">result</span> =&gt;</span> <span class="title function_">alert</span>(result), <span class="comment">// 不运行</span></span><br><span class="line">  <span class="function"><span class="params">error</span> =&gt;</span> <span class="title function_">alert</span>(error) <span class="comment">// 1 秒后显示 &quot;Error: Whoops!&quot;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<p>  如果只考虑对<code>resolve</code>的情况进行处理，可以只为<code>.then</code>提供一个函数</p>
+<p>  eg:</p>
+  <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(<span class="string">&quot;done!&quot;</span>), <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">promise.<span class="title function_">then</span>(alert); <span class="comment">// 1 秒后显示 &quot;done!&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>  它等价于<code>.then(function(resolve)&#123; //resolve code&#125;, null)</code></p>
+<p>  如果只考虑处理<code>reject</code>的情况，可以使用：</p>
+  <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Whoops!&quot;</span>)), <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// .catch(f) 与 promise.then(null, f) 一样</span></span><br><span class="line">promise.<span class="title function_">catch</span>(alert); <span class="comment">// 1 秒后显示 &quot;Error: Whoops!&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>  它相当于将<code>null</code>作为<code>.then</code>的第一个参数</p>
+<h6 id="finally"><a href="#finally" class="headerlink" title="finally"></a>finally</h6><p>  就像常规 <code>try &#123;...&#125; catch &#123;...&#125;</code> 中的 <code>finally</code> 子句一样，promise 中也有 <code>finally</code>。</p>
+<p>  调用 <code>.finally(f)</code> 类似于 <code>.then(f, f)</code>，因为当 promise settled 时 <code>f</code> 就会执行：无论 promise 被 resolve 还是 reject。</p>
+<p>  <code>finally</code> 的功能是设置一个处理程序在前面的操作完成后，执行清理&#x2F;终结。</p>
+<p>  例如，停止加载指示器，关闭不再需要的连接等。</p>
+<p>  eg:</p>
+  <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line">  .<span class="title function_">finally</span>(<span class="function">() =&gt;</span> <span class="title function_">alert</span>(<span class="string">&quot;Promise ready&quot;</span>)) <span class="comment">// 先触发</span></span><br><span class="line">  .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="title function_">alert</span>(err));  <span class="comment">// &lt;-- .catch 显示这个 error</span></span><br></pre></td></tr></table></figure></div>
+
+<ol>
+<li><p><code>finally</code> 处理程序也不应该返回任何内容。如果它返回了，返回的值会默认被忽略。</p>
+<p>此规则的唯一例外是当 <code>finally</code> 处理程序抛出 error 时。此时这个 error（而不是任何之前的结果）会被转到下一个处理程序。</p>
+</li>
+</ol>
+<h6 id="Promise链"><a href="#Promise链" class="headerlink" title="Promise链"></a>Promise链</h6><p>  <code>.then(handler)</code> 中所使用的处理程序（handler）可以创建并返回一个 promise。</p>
+<p>  在这种情况下，其他的处理程序将等待它 settled 后再获得其结果。</p>
+  <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(<span class="number">1</span>), <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">result</span>) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">alert</span>(result); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123; <span class="comment">// (*)</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(result * <span class="number">2</span>), <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">result</span>) &#123; <span class="comment">// (**)</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">alert</span>(result); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(result * <span class="number">2</span>), <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">result</span>) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">alert</span>(result); <span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+
+<p>  这里第一个 <code>.then</code> 显示 <code>1</code> 并在 <code>(*)</code> 行返回 <code>new Promise(…)</code>。1 秒后它会进行 resolve，然后 result（<code>resolve</code> 的参数，在这里它是 <code>result*2</code>）被传递给第二个 <code>.then</code> 的处理程序。这个处理程序位于 <code>(**)</code> 行，它显示 <code>2</code>，并执行相同的行为。</p>
+<p>  所以输出与前面的示例相同：1 → 2 → 4，但是现在在每次 <code>alert</code> 调用之间会有 1 秒钟的延迟。</p>
+<p>  返回 promise 使我们能够构建异步行为链。</p>
+<p>  如果 <code>.then</code>（或 <code>catch/finally</code> 都可以）处理程序返回一个 promise，那么链的其余部分将会等待，直到它状态变为 settled。当它被 settled 后，其 result（或 error）将被进一步传递下去。</p>
+<p>  <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/image-20231012115841508.png"
+                      alt="image-20231012115841508"
+                ></p>
+<h6 id="promise错误处理"><a href="#promise错误处理" class="headerlink" title="promise错误处理"></a>promise错误处理</h6><p>当一个<code>promise</code>被<code>reject</code>时，会将控制权移交至最近的<code>reject</code>处理程序，如<code>catch</code></p>
+<p>eg:</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;https://no-such-server.blabla&#x27;</span>) <span class="comment">// reject</span></span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">response</span> =&gt;</span> response.<span class="title function_">json</span>())</span><br><span class="line">  .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="title function_">alert</span>(err)) <span class="comment">// TypeError: Failed to fetch</span></span><br></pre></td></tr></table></figure></div>
+
+<p>当你尝试在promise中抛出异常时(或者有语法错误)，它也会被捕获并交至<code>reject</code>处理程序进行处理</p>
+<p>eg:</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Whoops!&quot;</span>);</span><br><span class="line">&#125;).<span class="title function_">catch</span>(alert); <span class="comment">// Error: Whoops!</span></span><br></pre></td></tr></table></figure></div>
+
+<p>它等同于：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Whoops!&quot;</span>));</span><br><span class="line">&#125;).<span class="title function_">catch</span>(alert); <span class="comment">// Error: Whoops!</span></span><br></pre></td></tr></table></figure></div>
+
+<h6 id="API"><a href="#API" class="headerlink" title="API"></a>API</h6>]]></content>
+  </entry>
+</search>
