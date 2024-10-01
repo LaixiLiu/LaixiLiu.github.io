@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"All posts","items":[{"title":"Welcome Docusaurus","permalink":"/welcome-docusaurus-v2","unlisted":false,"date":"2024-09-30T00:00:00.000Z"}]}')}}]);

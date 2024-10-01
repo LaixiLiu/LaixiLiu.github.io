@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[32],{8322:e=>{e.exports=JSON.parse('{"authors":[{"name":"Laixi Liu","title":"Computer Science Student @ NEAU","page":{"permalink":"/authors/llx"},"socials":{"github":"https://github.com/LaixiLiu"},"imageURL":"https://github.com/LaixiLiu.png","key":"llx","count":1}]}')}}]);
